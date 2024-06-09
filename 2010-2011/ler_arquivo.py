@@ -16,7 +16,7 @@ def create_rfm(df):
     dataframe["TotalPrice"] = dataframe["Quantity"] * dataframe["Price"]
     dataframe.dropna(inplace=True)
     dataframe = dataframe[~dataframe["Invoice"].str.contains("C", na=False)]
-
+    dataframe.to_csv('2010_2011.csv', index = False)
     # Calculate RFM metrics
     today_date = dt.datetime(2011, 12, 10)
     rfm = dataframe.groupby('Customer ID').agg({'InvoiceDate': lambda date: (today_date - date.max()).days,

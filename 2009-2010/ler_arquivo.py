@@ -52,7 +52,7 @@ def create_rfm(df):
     rfm.index = rfm.index.astype(int)
 
     if csv:
-        rfm.to_csv("rfm.csv")
+        rfm.to_csv("rfm_2009_2010.csv")
 
     return rfm
 
